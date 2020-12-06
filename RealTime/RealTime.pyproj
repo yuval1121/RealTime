@@ -30,6 +30,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="food\admin.py" />
+    <Compile Include="food\apps.py" />
+    <Compile Include="food\migrations\__init__.py" />
+    <Compile Include="food\models.py" />
+    <Compile Include="food\tests.py" />
+    <Compile Include="food\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="food\views.py" />
+    <Compile Include="food\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="RealTime\__init__.py" />
     <Compile Include="RealTime\settings.py" />
@@ -37,9 +47,14 @@
     <Compile Include="RealTime\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="food\templates\food\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="food\" />
+    <Folder Include="food\migrations\" />
+    <Folder Include="food\templates\" />
+    <Folder Include="food\templates\food\" />
     <Folder Include="RealTime\" />
   </ItemGroup>
   <ItemGroup>
