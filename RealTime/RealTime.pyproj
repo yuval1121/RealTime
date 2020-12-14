@@ -47,6 +47,7 @@
     <Compile Include="RealTime\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="food\templates\food\detail.html" />
     <Content Include="food\templates\food\index.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
