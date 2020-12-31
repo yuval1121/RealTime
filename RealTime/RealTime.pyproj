@@ -47,6 +47,7 @@
     <Compile Include="RealTime\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="food\static\food\style.css" />
     <Content Include="food\templates\food\detail.html" />
     <Content Include="food\templates\food\index.html" />
     <Content Include="requirements.txt" />
@@ -54,6 +55,8 @@
   <ItemGroup>
     <Folder Include="food\" />
     <Folder Include="food\migrations\" />
+    <Folder Include="food\static\" />
+    <Folder Include="food\static\food\" />
     <Folder Include="food\templates\" />
     <Folder Include="food\templates\food\" />
     <Folder Include="RealTime\" />

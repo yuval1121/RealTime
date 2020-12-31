@@ -1,9 +1,23 @@
-{% for item in item_list%}
-    <ul>
-        <li>
-            <a href="{% url 'detail' item.id %}">{{item.id}} -- {{item.item_name}}</a>
-        </li>
-    </ul>
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Food</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'food/style.css' %}" />
+    </head>
+    <body>
+        <nav class="navbar">
+
+
+        </nav>
+             {% for item in item_list%}
+        <ul>
+            <li>
+                <a href="{% url 'food:detail' item.id %}">{{item.id}} -- {{item.item_name}}</a>
+            </li>
+        </ul>
 {% endfor %}
-
-
+    </body>
+    </html>
