@@ -1,13 +1,9 @@
-﻿<!DOCTYPE html>
+﻿{% extends 'food/base.html' %}
+{% block body %}
+            <h1>{{item.item_name}}</h1>
+            <h2>{{ item.item_desc}}</h2>
+            <h3>{{ item.item_price }}</h3>
+{% endblock %}
+    
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h1>{{item.item_name}}</h1>
-    <h2>{{ item.item_desc}}</h2>
-    <h3>{{ item.item_price }}</h3>
-</body>
-</html>
+

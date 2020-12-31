@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="food\static\food\style.css" />
+    <Content Include="food\templates\food\base.html" />
     <Content Include="food\templates\food\detail.html" />
     <Content Include="food\templates\food\index.html" />
     <Content Include="requirements.txt" />
