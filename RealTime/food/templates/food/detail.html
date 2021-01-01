@@ -22,6 +22,9 @@
             {% else %}
                 <h1 style="color:forestgreen;">{{ item.item_people_inside }} -- Currently available for entry</h1>
             {% endif %}
+
+
+            <a href="{% url 'food:delete_item' item.id  %}">Delete</a>
         </div>
     </div>
 </div>
