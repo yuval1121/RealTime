@@ -13,5 +13,5 @@ class Item(models.Model):
     item_shipping = models.BooleanField(default=False)
     item_shipping_avail = models.BooleanField(default=False)
     item_sales = models.CharField(max_length=200,default="None")
-    item_allowed_people = models.IntegerField(default=30)
-    item_people_inside = models.IntegerField(default=0)
+    item_allowed_people = models.PositiveIntegerField(default=30)
+    item_people_inside = models.PositiveIntegerField(default=1)
