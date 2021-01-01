@@ -48,6 +48,13 @@
     <Compile Include="RealTime\settings.py" />
     <Compile Include="RealTime\urls.py" />
     <Compile Include="RealTime\wsgi.py" />
+    <Compile Include="users\admin.py" />
+    <Compile Include="users\apps.py" />
+    <Compile Include="users\migrations\__init__.py" />
+    <Compile Include="users\models.py" />
+    <Compile Include="users\tests.py" />
+    <Compile Include="users\views.py" />
+    <Compile Include="users\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="food\static\food\style.css" />
@@ -57,6 +64,7 @@
     <Content Include="food\templates\food\item_delete.html" />
     <Content Include="food\templates\food\item_form.html" />
     <Content Include="requirements.txt" />
+    <Content Include="users\templates\users\register.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="food\" />
@@ -66,6 +74,10 @@
     <Folder Include="food\templates\" />
     <Folder Include="food\templates\food\" />
     <Folder Include="RealTime\" />
+    <Folder Include="users\" />
+    <Folder Include="users\migrations\" />
+    <Folder Include="users\templates\" />
+    <Folder Include="users\templates\users\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
