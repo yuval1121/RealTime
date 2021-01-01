@@ -16,7 +16,12 @@
             <h1>{{ item.item_shipping_avail  }}</h1>
             <h1>{{ item.item_sales }}</h1>
             <h1>{{ item.item_allowed_people }}</h1>
-            <h1>{{ item.item_people_inside }}</h1>
+
+            {% if item.item_people_inside > item.item_allowed_people  %}
+                <h1 style="color:red;">{{ item.item_people_inside }} -- Currently overcrowded, unavailable for entry</h1>
+            {% else %}
+                <h1 style="color:forestgreen;">{{ item.item_people_inside }} -- Currently available for entry</h1>
+            {% endif %}
         </div>
     </div>
 </div>
