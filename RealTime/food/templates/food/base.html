@@ -9,10 +9,13 @@
     </head>
     <body>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <a href="#" class="navbar-brand">RealTime</a>
+                <a href="#" class="navbar-brand">
+                  <img src="https://res.cloudinary.com/mhmd/image/upload/v1557368579/logo_iqjuay.png" width="45" alt="" class="d-inline-block align-middle mr-2">
+                  <span class="text-uppercase font-weight-bold">RealTime</span>
+                </a>
 
             <div class="navbar">
-                <a class="nav-item nav-link" href="#">Add Item</a>
+                <a class="nav-item nav-link" href="{% url 'food:create_item' %}">Add Item</a>
                 <a class="nav-item nav-link" href="#">Delete Item</a>
                 <a class="nav-item nav-link" href="#">View Item</a>
             </div>

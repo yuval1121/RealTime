@@ -32,6 +32,9 @@
   <ItemGroup>
     <Compile Include="food\admin.py" />
     <Compile Include="food\apps.py" />
+    <Compile Include="food\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="food\migrations\__init__.py" />
     <Compile Include="food\models.py" />
     <Compile Include="food\tests.py" />
@@ -51,6 +54,7 @@
     <Content Include="food\templates\food\base.html" />
     <Content Include="food\templates\food\detail.html" />
     <Content Include="food\templates\food\index.html" />
+    <Content Include="food\templates\food\item_form.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
