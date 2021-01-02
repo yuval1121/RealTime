@@ -68,6 +68,7 @@
     <Content Include="food\templates\food\item_form.html" />
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
+    <Content Include="users\templates\users\logout.html" />
     <Content Include="users\templates\users\register.html" />
   </ItemGroup>
   <ItemGroup>
