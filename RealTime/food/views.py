@@ -5,6 +5,7 @@ from django.template import loader
 from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 # Create your views here.
 
 class IndexClassView(ListView):
@@ -21,16 +22,16 @@ class detail(DetailView):
     model = Item
     template_name='food/detail.html'
 
+class create_item(CreateView):
+    model = Item
+    fields = ['item_name','item_desc','item_image','item_opening_hours','item_shipping','item_shipping_available','item_sales','item_allowed_people','item_people_inside']
+    template_name='food/item_form.html'
 
+    def form_valid(self,form):
+        form.instance.user_name = self.request.user
 
-def create_item(request):
-    form = ItemForm(request.POST or None)
+        return super().form_valid(form)
 
-    if form.is_valid():
-        form.save()
-        return redirect('food:index')
-
-    return render(request,'food/item_form.html',{'form':form})
 
 def update_item(request,id):
     item = Item.objects.get(id=id)

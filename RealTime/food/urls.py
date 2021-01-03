@@ -10,7 +10,7 @@ urlpatterns = [
     #/item/
     path('item/',views.item,name='item'),
     #add items
-    path('add/',views.create_item,name='create_item'),
+    path('add/',views.create_item.as_view(),name='create_item'),
     #edit items
     path('update/<int:id>/',views.update_item,name='update_item'),
     #delete
