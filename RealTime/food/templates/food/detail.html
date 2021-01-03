@@ -9,18 +9,19 @@
         </div>
 
         <div class="col-md-6">
-            <h1>{{item.item_name}}</h1>
-            <h1>{{ item.item_desc}}</h1>
-            <h1>{{ item.item_opening_hours }}</h1>
-            <h1>{{ item.item_shipping }}</h1>
-            <h1>{{ item.item_shipping_available  }}</h1>
-            <h1>{{ item.item_sales }}</h1>
-            <h1>{{ item.item_allowed_people }}</h1>
+            <h2>Name: {{item.item_name}}</h2>
+            <h2>Description: {{ item.item_desc}}</h2>
+            <h2>Opening hours: {{ item.item_opening_hours }}</h2>
+            <h2>Shipping: {{ item.item_shipping }}</h2>
+            <h2>Shipping available:{{ item.item_shipping_available  }}</h2>
+            <h2>Current sales: {{ item.item_sales }}</h2>
+            <h2>People allowed: {{ item.item_allowed_people }}</h2>
+            <h2>People inside: {{ item.item_people_inside }}</h2>
 
             {% if item.item_people_inside > item.item_allowed_people  %}
-                <h1 style="color:red;">{{ item.item_people_inside }} -- Currently overcrowded, unavailable for entry</h1>
+               <h2>Status: </h2> <h2 style="color:red;"> Currently overcrowded, unavailable for entry</h2>
             {% else %}
-                <h1 style="color:forestgreen;">{{ item.item_people_inside }} -- Currently available for entry</h1>
+               <h2>Status: </h2> <h2 style="color:forestgreen;"> Currently available for entry</h2>
             {% endif %}
 
 
