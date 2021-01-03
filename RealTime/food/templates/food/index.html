@@ -1,7 +1,7 @@
 ﻿{% extends 'food/base.html' %}
    {% block body %}
         {% for item in item_list%}
-            <div class="row">
+            <div class="row" style="margin-top:20px;">
                 <div class="col-md-3 offset-md-2">
                     <img class="card" height="150" width="250" src="{{ item.item_image }}" />
                 </div>
