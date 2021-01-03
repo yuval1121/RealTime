@@ -6,7 +6,8 @@ urlpatterns = [
     #/food/
     path('',views.IndexClassView.as_view(),name='index'),
     #/food/1
-    path('<int:item_id>/',views.detail,name='detail'),
+    path('<int:pk>/',views.detail.as_view(),name='detail'),
+    #/item/
     path('item/',views.item,name='item'),
     #add items
     path('add/',views.create_item,name='create_item'),
