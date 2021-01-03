@@ -6,6 +6,8 @@ from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import user_passes_test
+
 # Create your views here.
 
 class IndexClassView(ListView):
@@ -33,15 +35,20 @@ class create_item(CreateView):
         return super().form_valid(form)
 
 
+
 def update_item(request,id):
     item = Item.objects.get(id=id)
-    form = ItemForm(request.POST or None,instance=item)
 
-    if form.is_valid():
-        form.save()
+    if item.user_name.get_username == request.user.get_username:
+        form = ItemForm(request.POST or None,instance=item)
+
+        if form.is_valid():
+            form.save()
+            return redirect('food:index')
+
+        return render(request,'food/item_form.html',{'form':form,'item':item})
+    else:
         return redirect('food:index')
-
-    return render(request,'food/item_form.html',{'form':form,'item':item})
 
 def delete_item(request,id):
     item = Item.objects.get(id=id)
