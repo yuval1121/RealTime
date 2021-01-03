@@ -19,9 +19,9 @@
             <h2>People inside: {{ object.item_people_inside }}</h2>
 
             {% if object.item_people_inside > object.item_allowed_people  %}
-               <h2>Status: </h2> <h2 style="color:red;"> Currently overcrowded, unavailable for entry</h2>
+               <h2 style="display:inline">Status: </h2> <h2 style="color:red;display:inline;"> Currently overcrowded, unavailable for entry</h2>
             {% else %}
-               <h2>Status: </h2> <h2 style="color:forestgreen;"> Currently available for entry</h2>
+               <h2 style="display:inline">Status: </h2> <h2 style="color:forestgreen;display:inline;"> Currently available for entry</h2>
             {% endif %}
 
 
