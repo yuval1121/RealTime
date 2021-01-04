@@ -24,8 +24,11 @@
                <h2 style="display:inline">Status: </h2> <h2 style="color:forestgreen;display:inline;"> Currently available for entry</h2>
             {% endif %}
 
-
-            <a href="{% url 'food:delete_item' object.id  %}">Delete</a>
+            <br />
+            {% if object.user_name.get_username == user.get_username   %}
+            <a class ="btn btn-info" href="{% url 'food:update_item' object.id  %}">Edit</a>
+            <a class ="btn btn-info" href="{% url 'food:delete_item' object.id  %}">Delete</a>
+            {% endif %}
         </div>
     </div>
 </div>
