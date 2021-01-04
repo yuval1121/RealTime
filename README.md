@@ -6,3 +6,8 @@ in them during lockdown times.
 Superuser credentials:
 user:yuval
 pass:1234
+
+
+<p align="center">
+  <img src="read.png" width="350" title="hover text">
+</p>
