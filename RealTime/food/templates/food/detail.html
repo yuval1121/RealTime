@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:30px">
         <div class="col-md-6">
             <img height="300" src="{{item.item_image}}" class="card"  />
         </div>
@@ -12,8 +12,17 @@
             <h2>Name: {{object.item_name}}</h2>
             <h2>Description: {{ object.item_desc}}</h2>
             <h2>Opening hours: {{ object.item_opening_hours }}</h2>
-            <h2>Shipping: {{ object.item_shipping }}</h2>
-            <h2>Shipping available:{{ object.item_shipping_available  }}</h2>
+            {% if object.item_shipping %}
+            <h2>Shipping: Yes</h2>
+            {% else   %}
+            <h2>Shipping: No </h2>
+            {% endif  %}
+
+            {% if object.item_shipping_available  %}
+            <h2>Shipping available: Yes</h2>
+            {% else  %}
+            <h2>Shipping available: No</h2>
+            {% endif %}
             <h2>Current sales: {{ object.item_sales }}</h2>
             <h2>People allowed: {{ object.item_allowed_people }}</h2>
             <h2>People inside: {{ object.item_people_inside }}</h2>
