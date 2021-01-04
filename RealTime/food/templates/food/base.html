@@ -8,15 +8,29 @@
         <title>Document</title>
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="#" class="navbar-brand">RealTime</a>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                <a href="{% url 'food:index' %}" class="navbar-brand">
+                  <img src="{% static 'food/logo.png'  %}" width="40"  alt="" class="d-inline-block align-middle mr-2">
+                  <span class="text-uppercase font-weight-bold">RealTime</span>
+                </a>
 
             <div class="navbar">
-                <a class="nav-item nav-link" href="#">Add Item</a>
-                <a class="nav-item nav-link" href="#">Delete Item</a>
-                <a class="nav-item nav-link" href="#">View Item</a>
+                <a class="nav-item nav-link" href="{% url 'food:create_item' %}">Add Item</a>
+                {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'logout'   %}">Logout</a>
+                {% else %}
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
             </div>
         </nav>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }} 
+            </div>  
+            {% endfor %}
+        {% endif %}
 
 
         {% block body %}

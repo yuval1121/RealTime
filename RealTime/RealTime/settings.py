@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'food.apps.foodConfig',
+    'users.apps.usersConfig'
 ]
 
 # Middleware framework
@@ -112,3 +113,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+LOGIN_REDIRECT_URL = 'food:index'
+LOGOUT_REDIRECT_URL ='food:index'
+LOGIN_URL = 'login'
