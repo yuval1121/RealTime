@@ -67,7 +67,6 @@
     <Content Include="food\templates\food\index.html" />
     <Content Include="food\templates\food\item_delete.html" />
     <Content Include="food\templates\food\item_form.html" />
-    <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
     <Content Include="users\templates\users\logout.html" />
