@@ -8,6 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import ObjectDoesNotExist
 
 
 
@@ -42,18 +43,22 @@ class create_item(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
 
 
 def update_item(request,id):
-    item = Item.objects.get(id=id)
 
-    if item.user_name.get_username == request.user.get_username:
-        form = ItemForm(request.POST or None,instance=item)
+    try:
+        item = Item.objects.get(id=id)
 
-        if form.is_valid():
-            form.save()
-            return redirect('food:index')
+        if item.user_name.get_username == request.user.get_username:
+            form = ItemForm(request.POST or None,instance=item)
 
-        return render(request,'food/item_form.html',{'form':form,'item':item})
-    else:
-        return HttpResponse('<h1>You have no permission to edit this item</h1>')
+            if form.is_valid():
+                form.save()
+                return redirect('food:index')
+
+            return render(request,'food/item_form.html',{'form':form,'item':item})
+        else:
+            return HttpResponse('<h1>You have no permission to edit this item</h1>')
+    except ObjectDoesNotExist:
+        return HttpResponse("<h1>Item doesn't exists</h1>")
 
 def delete_item(request,id):
     item = Item.objects.get(id=id)
