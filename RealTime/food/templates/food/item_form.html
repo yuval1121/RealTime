@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header" >
                     <div class="card-title">
-                        Add item
+                        Configure Item
                     </div>
                 </div>
 
@@ -15,7 +15,8 @@
                     <form method="post">
                         {% csrf_token %}
                         {{ form }}
-                        <button type="submit">Add</button>
+                        <br />
+                        <button type="submit">Submit</button>
                     </form>
                 </div>
             </div>
