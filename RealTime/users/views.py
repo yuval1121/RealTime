@@ -1,10 +1,15 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from .forms import RegisterForm
+from django.http import HttpResponse
 # Create your views here.
 
 
 def register(request):
+
+    if request.user.is_authenticated:
+        return HttpResponse("You are already logged in")
+
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
