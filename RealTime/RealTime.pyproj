@@ -60,12 +60,14 @@
     <Compile Include="users\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="food\static\Food\logo.png" />
     <Content Include="food\static\food\style.css" />
     <Content Include="food\templates\food\base.html" />
     <Content Include="food\templates\food\detail.html" />
     <Content Include="food\templates\food\index.html" />
     <Content Include="food\templates\food\item_delete.html" />
     <Content Include="food\templates\food\item_form.html" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="users\templates\users\login.html" />
     <Content Include="users\templates\users\logout.html" />

@@ -58,7 +58,7 @@ def update_item(request,id):
         else:
             return HttpResponse('<h1>You have no permission to edit this item</h1>')
     except ObjectDoesNotExist:
-        return HttpResponse("<h1>Item doesn't exists</h1>")
+        return HttpResponse("<h1>Item doesn't exist</h1>")
 
 def delete_item(request,id):
     try:
@@ -73,4 +73,4 @@ def delete_item(request,id):
         else:
             return HttpResponse('<h1>You have no permission to delete this item</h1>')
     except ObjectDoesNotExist:
-        return HttpResponse("<h1>Item doesn't exists</h1>")
+        return HttpResponse("<h1>Item doesn't exist</h1>")
