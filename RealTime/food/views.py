@@ -6,7 +6,10 @@ from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
 
 # Create your views here.
 
@@ -24,7 +27,9 @@ class detail(DetailView):
     model = Item
     template_name='food/detail.html'
 
-class create_item(CreateView):
+class create_item(LoginRequiredMixin,PermissionRequiredMixin,CreateView):
+    permission_required = 'food.add_item'
+
     model = Item
     fields = ['item_name','item_desc','item_image','item_opening_hours','item_shipping','item_shipping_available','item_sales','item_allowed_people','item_people_inside']
     template_name='food/item_form.html'
