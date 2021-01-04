@@ -61,13 +61,16 @@ def update_item(request,id):
         return HttpResponse("<h1>Item doesn't exists</h1>")
 
 def delete_item(request,id):
-    item = Item.objects.get(id=id)
+    try:
+        item = Item.objects.get(id=id)
     
-    if item.user_name.get_username == request.user.get_username:
-        if request.method == 'POST':
-            item.delete()
-            return redirect('food:index')
+        if item.user_name.get_username == request.user.get_username:
+            if request.method == 'POST':
+                item.delete()
+                return redirect('food:index')
         
-        return render(request,'food/item_delete.html',{'item':item})
-    else:
-        return HttpResponse('<h1>You have no permission to delete this item</h1>')
+            return render(request,'food/item_delete.html',{'item':item})
+        else:
+            return HttpResponse('<h1>You have no permission to delete this item</h1>')
+    except ObjectDoesNotExist:
+        return HttpResponse("<h1>Item doesn't exists</h1>")
