@@ -35,8 +35,8 @@
 
             <br />
             {% if object.user_name.get_username == user.get_username   %}
-            <a class ="btn btn-info" href="{% url 'food:update_item' object.id  %}">Edit</a>
-            <a class ="btn btn-info" href="{% url 'food:delete_item' object.id  %}">Delete</a>
+            <a class ="btn btn-md btn-outline-secondary" href="{% url 'food:update_item' object.id  %}">Edit</a>
+            <a class ="btn btn-md btn-outline-secondary" href="{% url 'food:delete_item' object.id  %}">Delete</a>
             {% endif %}
         </div>
     </div>
