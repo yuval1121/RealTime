@@ -1,17 +1,34 @@
 ﻿{% extends 'food/base.html' %}
    {% block body %}
-        {% for item in item_list%}
-            <div class="row" style="margin-top:20px;">
-                <div class="col-md-3 offset-md-2">
-                    <img class="card" height="150" width="250" src="{{ item.item_image }}" />
+        <main role="main">
+
+              <section class="jumbotron text-center">
+                <div class="container">
+                  <h1 class="jumbotron-heading">Welcome to RealTime</h1>
+                  <p class="lead text-muted">An internet aggregator for all of your favorite stores</p>
                 </div>
-                <div class="col-md-4">
-                    <h3>{{ item.item_name }}</h3>
-                    <h5>{{ item.item_desc }}</h5>
-                </div>
-                <div class="col-md-2">
-                    <a href="{% url 'food:detail' item.id %}" class="btn btn-info">Details</a>
+              </section>
+
+            <div class="album py-5 bg-light" style="margin:-30px">
+                <div class="container">
+                    <div class="row">
+                            {% for item in item_list%}
+                                <div class="col-md-4">
+                                  <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top" src="{{ item.item_image }}" alt="Card image cap">
+                                    <div class="card-body">
+                                      <p class="card-text">{{item.item_desc}}</p>
+                                      <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                          <a href="{% url 'food:detail' item.id %}" class="btn btn-sm btn-outline-secondary">View</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        {% endfor %}
+        </main>
    {% endblock %}
