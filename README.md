@@ -18,6 +18,7 @@ in them during lockdown times.
 Project is created with:
 * Bootstrap version: 4.5.2
 * Django version: 2.2.1
+* VS Studio: Requires Python & Django module
 	
 ## Setup
 Superuser credentials:
